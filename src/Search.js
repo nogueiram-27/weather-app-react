@@ -86,7 +86,9 @@ export default function Search() {
           {" "}
           <PropagateLoader
             css={css`
-              margin: 20px auto;
+              position: relative;
+              margin: 50px auto;
+              left: 50%;
             `}
             loading={true}
             color={"#03c4a1"}
