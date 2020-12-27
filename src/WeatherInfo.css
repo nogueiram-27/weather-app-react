@@ -1,10 +1,8 @@
 .WeatherInfo .curr-icon {
-  /*height: 80px;
-  width: 80px;*/
+  height: 80px;
+  width: 80px;
   position: relative;
-  left: -2%;
-  top: 17px;
-  font-size: 46px;
+  left: -6%;
 }
 
 .WeatherInfo .temp-main {

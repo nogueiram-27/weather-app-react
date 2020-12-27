@@ -2,28 +2,39 @@ import React from "react";
 
 import "./WeatherDetails.css";
 
-export default function WeatherDetails() {
+export default function WeatherDetails(props) {
+  function convertMetroPerSecondToKilometerPerHour(metroPerSecond) {
+    return Math.round(metroPerSecond * 3.6);
+  }
+
   return (
     <div className="WeatherDetails">
       {" "}
       <div className="curr-info">
         <p>
-          Feels like: <span>12</span>º
+          Feels like:{" "}
+          <span>{Math.round(props.weatherInfo.currentFeelsLike)}</span>º
         </p>
         <p>
-          <span>12</span>º /<span>14</span>º
+          <span>{Math.round(props.weatherInfo.currentMinTemp)}</span>º /
+          <span>{Math.round(props.weatherInfo.currentMaxTemp)}</span>º
         </p>
         <p>
           <i className="fas fa-tint"></i>
-          <span>87</span>%
+          <span>{props.weatherInfo.currentHumidity}</span>%
         </p>
         <p>
           <i className="fas fa-wind"></i>
-          <span>8</span> km/h
+          <span>
+            {convertMetroPerSecondToKilometerPerHour(
+              props.weatherInfo.currentWind
+            )}
+          </span>{" "}
+          km/h
         </p>
         <p>
           <i className="fas fa-umbrella"></i>
-          <span>0</span>mm
+          <span>{props.weatherInfo.currentPrecipitation}</span>mm
         </p>
       </div>
     </div>
