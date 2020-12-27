@@ -1,0 +1,13 @@
+.WeatherDetails .curr-info {
+  padding-top: 11px;
+}
+
+.WeatherDetails .curr-info p {
+  padding: 0;
+  margin-bottom: 4px;
+}
+
+.WeatherDetails .curr-info .fas {
+  width: 18px;
+  height: 18px;
+}

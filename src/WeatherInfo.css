@@ -1,0 +1,34 @@
+.WeatherInfo .curr-icon {
+  /*height: 80px;
+  width: 80px;*/
+  position: relative;
+  left: -2%;
+  top: 17px;
+  font-size: 46px;
+}
+
+.WeatherInfo .temp-main {
+  font-size: 64px;
+}
+
+.WeatherInfo .unit-main {
+  font-size: 18px;
+  position: relative;
+  top: -31px;
+}
+
+.WeatherInfo .curr-desc {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.WeatherInfo .curr-desc:first-letter {
+  text-transform: capitalize;
+}
+
+.WeatherInfo .last-upd {
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+}

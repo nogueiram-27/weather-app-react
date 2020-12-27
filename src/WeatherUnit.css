@@ -1,0 +1,26 @@
+.WeatherUnit .weather-unit {
+  margin-top: 6px;
+  text-align: right;
+}
+
+.WeatherUnit .convert-unit {
+  text-decoration: none;
+  color: #03c4a1;
+}
+
+.WeatherUnit .convert-unit:hover {
+  color: #009688;
+}
+
+.WeatherUnit .selected {
+  text-decoration: none;
+  font-weight: bold;
+  color: #009688;
+  cursor: default;
+}
+
+.WeatherUnit .selected:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: #009688;
+}
