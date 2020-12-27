@@ -11,6 +11,7 @@ ReactDOM.render(
       <a
         href="https://github.com/nogueiram-27/weather-app-react"
         target="_blank"
+        rel="noreferrer"
       >
         Open-source code
       </a>
