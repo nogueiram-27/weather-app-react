@@ -45,30 +45,3 @@
 .Search .location-button:hover .tooltiptext {
   visibility: visible;
 }
-
-.Search .weather-unit {
-  margin-top: 6px;
-  text-align: right;
-}
-
-.Search .convert-unit {
-  text-decoration: none;
-  color: #03c4a1;
-}
-
-.Search .convert-unit:hover {
-  color: #009688;
-}
-
-.Search .selected {
-  text-decoration: none;
-  font-weight: bold;
-  color: #009688;
-  cursor: default;
-}
-
-.Search .selected:hover {
-  text-decoration: none;
-  font-weight: bold;
-  color: #009688;
-}

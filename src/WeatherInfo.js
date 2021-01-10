@@ -1,5 +1,7 @@
 import React from "react";
 import DateHandler from "./DateHandler";
+import ConvertToCelsius from "./ConvertToCelsius";
+import ConvertToFahrenheit from "./ConvertToFahrenheit";
 
 import "./WeatherInfo.css";
 
@@ -18,9 +20,22 @@ export default function WeatherInfo(props) {
 
         <h3 className="curr-city-weather float-left">
           <strong className="temp-main">
-            {Math.round(props.weatherInfo.currentTemp)}
+            {props.weatherUnit === "metric" ? (
+              <ConvertToCelsius
+                temp={props.weatherInfo.currentTemp}
+                currentUnit={props.weatherInfo.weatherUnit}
+              />
+            ) : (
+              <ConvertToFahrenheit
+                temp={props.weatherInfo.currentTemp}
+                currentUnit={props.weatherInfo.weatherUnit}
+              />
+            )}
           </strong>
-          <span className="unit-main">ºC</span>
+          <span className="unit-main">
+            {" "}
+            {props.weatherUnit === "metric" ? "ºC" : "ºF"}
+          </span>
         </h3>
       </div>
       <p className="curr-desc">{props.weatherInfo.currentDescription}</p>

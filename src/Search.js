@@ -3,6 +3,7 @@ import axios from "axios";
 import { css } from "@emotion/core";
 import PropagateLoader from "react-spinners/PropagateLoader";
 
+import WeatherUnits from "./WeatherUnits";
 import LocationAndDate from "./LocationAndDate";
 import CurrentWeather from "./CurrentWeather";
 
@@ -10,7 +11,7 @@ import "./Search.css";
 
 export default function Search() {
   const apiKey = "db8ccdf98a00dd96ce6fde5b428abba4";
-  const tempUnit = "metric";
+  const [tempUnit, setTempUnit] = useState("metric");
 
   const [inputCity, setInputCity] = useState("Lisbon");
   const [weatherInfo, setWeatherInfo] = useState({ loaded: false });
@@ -33,6 +34,7 @@ export default function Search() {
       currentIcon: response.data.weather[0].icon,
       currentDescription: response.data.weather[0].description,
       lastUpd: response.data.dt * 1000,
+      weatherUnit: tempUnit,
       loaded: true,
     });
   }
@@ -49,6 +51,16 @@ export default function Search() {
 
   function getInputCity(event) {
     setInputCity(event.target.value);
+  }
+
+  function handleChange(value) {
+    setTempUnit(value);
+
+    /*if (value === "metric") {
+      setTempUnit("metric");
+    } else {
+      setTempUnit("imperial");
+    } */
   }
 
   if (weatherInfo.loaded) {
@@ -81,14 +93,12 @@ export default function Search() {
               </div>
             </div>
             <div className="col-4">
-              <div className="WeatherUnit">
-                <p className=" weather-unit convert-unit selected">ºC | ºF</p>
-              </div>
+              <WeatherUnits handleChange={handleChange} />
             </div>
           </div>
         </div>
         <LocationAndDate weatherInfo={weatherInfo} />
-        <CurrentWeather weatherInfo={weatherInfo} />
+        <CurrentWeather weatherInfo={weatherInfo} weatherUnit={tempUnit} />
       </div>
     );
   } else {

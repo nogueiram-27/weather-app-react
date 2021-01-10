@@ -1,4 +1,6 @@
 import React from "react";
+import ConvertToCelsius from "./ConvertToCelsius";
+import ConvertToFahrenheit from "./ConvertToFahrenheit";
 
 import "./WeatherDetails.css";
 
@@ -13,11 +15,53 @@ export default function WeatherDetails(props) {
       <div className="curr-info">
         <p>
           Feels like:{" "}
-          <span>{Math.round(props.weatherInfo.currentFeelsLike)}</span>º
+          <span>
+            {" "}
+            {props.weatherUnit === "metric" ? (
+              <ConvertToCelsius
+                temp={props.weatherInfo.currentFeelsLike}
+                currentUnit={props.weatherInfo.weatherUnit}
+              />
+            ) : (
+              <ConvertToFahrenheit
+                temp={props.weatherInfo.currentFeelsLike}
+                currentUnit={props.weatherInfo.weatherUnit}
+              />
+            )}
+          </span>
+          º
         </p>
         <p>
-          <span>{Math.round(props.weatherInfo.currentMinTemp)}</span>º /
-          <span>{Math.round(props.weatherInfo.currentMaxTemp)}</span>º
+          <span>
+            {" "}
+            {props.weatherUnit === "metric" ? (
+              <ConvertToCelsius
+                temp={props.weatherInfo.currentMinTemp}
+                currentUnit={props.weatherInfo.weatherUnit}
+              />
+            ) : (
+              <ConvertToFahrenheit
+                temp={props.weatherInfo.currentMinTemp}
+                currentUnit={props.weatherInfo.weatherUnit}
+              />
+            )}
+          </span>
+          º /
+          <span>
+            {" "}
+            {props.weatherUnit === "metric" ? (
+              <ConvertToCelsius
+                temp={props.weatherInfo.currentMaxTemp}
+                currentUnit={props.weatherInfo.weatherUnit}
+              />
+            ) : (
+              <ConvertToFahrenheit
+                temp={props.weatherInfo.currentMaxTemp}
+                currentUnit={props.weatherInfo.weatherUnit}
+              />
+            )}
+          </span>
+          º
         </p>
         <p>
           <i className="fas fa-tint"></i>
