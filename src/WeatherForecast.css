@@ -12,9 +12,14 @@
   margin: 0;
 }
 
-.WeatherForecast .pred-icon {
-  margin: 0 auto;
+.WeatherForecast canvas {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 8px;
   display: block;
-  width: 55px;
-  height: 55px;
+}
+
+.WeatherForecast hr {
+  border: 0;
+  border-top: 2px solid rgba(3, 196, 161);
 }

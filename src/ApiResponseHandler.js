@@ -36,7 +36,20 @@ export default function ApiResponseHandler(props) {
   }
 
   function getPredApiResonse(response) {
-    setWeatherPred(response.data.list.slice(0, 6));
+    const objectAux = [];
+
+    response.data.list.slice(0, 6).forEach((element) => {
+      objectAux.push({
+        nextDate: element.dt * 1000,
+        tempMin: element.main.temp_min,
+        tempMax: element.main.temp_max,
+        iconId: element.weather[0].icon,
+        description: element.weather[0].description,
+        weatherUnit: props.unit,
+      });
+    });
+
+    setWeatherPred(objectAux);
   }
 
   function callApi() {

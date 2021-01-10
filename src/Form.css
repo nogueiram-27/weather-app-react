@@ -1,0 +1,10 @@
+.Form button {
+  background: none;
+  border: 0;
+}
+
+.Form .form-control {
+  display: inline;
+  width: 60%;
+  border: 1px solid #03c4a1;
+}

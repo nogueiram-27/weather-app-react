@@ -42,14 +42,22 @@ export default function DateHandler(props) {
       dateTimeMinutes = `0${dateTimeMinutes}`;
     }
 
-    return (
-      <p className="last-upd">
-        Last updated:{" "}
-        <span>
+    if (props.dateType === "last-upd") {
+      return (
+        <p className="last-upd">
+          Last updated:{" "}
+          <span>
+            {dateTimeHour}:{dateTimeMinutes}
+          </span>
+        </p>
+      );
+    } else {
+      return (
+        <p className="next-hour">
           {dateTimeHour}:{dateTimeMinutes}
-        </span>
-      </p>
-    );
+        </p>
+      );
+    }
   }
 
   return props.dateType === "current" ? <CurrentDate /> : <EpochToDateTime />;

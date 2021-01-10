@@ -1,5 +1,5 @@
 import React from "react";
-//import axios from "axios";
+import WeatherForecastDetails from "./WeatherForecastDetails";
 
 import "./WeatherForecast.css";
 
@@ -15,14 +15,14 @@ export default function WeatherForecast(props) {
       </div>
       <div className="next-days">
         <div className="row">
-          <div className="col-2">
-            <p className="next-hour">15:00</p>
-            <img className="pred-icon" alt="test" />
-            <p className="pred-temp">
-              <span className="temp-min">14</span>º/
-              <span className="temp-max">15</span>º
-            </p>
-          </div>
+          {props.weatherInfo.map(function (item) {
+            return (
+              <WeatherForecastDetails
+                weatherInfo={item}
+                weatherUnit={props.weatherUnit}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

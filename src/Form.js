@@ -27,10 +27,6 @@ export default function Form(props) {
         <button type="submit">
           <i className="fas fa-search"></i>
         </button>
-        <button className="location-button">
-          <i className="fas fa-map-marker-alt"></i>
-          <span className="tooltiptext"> Weather in current location </span>
-        </button>
       </form>
     </div>
   );
